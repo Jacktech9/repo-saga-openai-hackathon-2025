@@ -1,205 +1,207 @@
 # Repo Saga Engine 🎭
 
-一個將 GitHub 項目轉化為詩歌與小說的魔法引擎。通過分析代碼結構和內容，自動生成富有創意的文學作品。
+A magical engine that transforms GitHub projects into poetry and fiction. Automatically generates creative literary works by analyzing code structure and content.
 
-## 項目概述
+![Repo Saga Engine Interface](images/repo-saga-engine-interface.png)
 
-Repo Saga Engine 是一個全棧應用，包含：
-- **後端 (FastAPI)**: 提供 API 服務，分析 GitHub 項目並生成文學作品
-- **前端 (Vue 3 + Vite)**: 用戶界面，提供項目輸入和結果展示
+## Project Overview
 
-## 項目結構
+Repo Saga Engine is a full-stack application that includes:
+- **Backend (FastAPI)**: Provides API services, analyzes GitHub projects and generates literary works
+- **Frontend (Vue 3 + Vite)**: User interface for project input and result display
+
+## Project Structure
 
 ```
 .
-├── repo-saga-backend/          # 後端服務 (FastAPI)
+├── repo-saga-backend/          # Backend service (FastAPI)
 │   ├── app/
-│   │   ├── main.py            # FastAPI 主應用
-│   │   └── services.py        # 業務邏輯服務
-│   ├── requirements.txt       # Python 依賴
-│   └── test_generate_api.py   # API 測試
-├── repo-saga-frontend/         # 前端應用 (Vue 3)
+│   │   ├── main.py            # FastAPI main application
+│   │   └── services.py        # Business logic services
+│   ├── requirements.txt       # Python dependencies
+│   └── test_generate_api.py   # API tests
+├── repo-saga-frontend/         # Frontend application (Vue 3)
 │   ├── src/
-│   │   ├── App.vue           # 主應用組件
-│   │   ├── components/       # Vue 組件
-│   │   └── services/         # API 服務
-│   ├── package.json          # Node.js 依賴
-│   └── vite.config.js        # Vite 配置
-└── README.md                 # 項目說明文檔
+│   │   ├── App.vue           # Main application component
+│   │   ├── components/       # Vue components
+│   │   └── services/         # API services
+│   ├── package.json          # Node.js dependencies
+│   └── vite.config.js        # Vite configuration
+└── README.md                 # Project documentation
 ```
 
-## 功能特色
+## Features
 
-- 🔍 **智能分析**: 深度分析 GitHub 項目的代碼結構和內容
-- 📊 **洞察報告**: 生成項目的技術洞察和分析報告
-- 🎨 **詩歌創作**: 將代碼邏輯轉化為優美的詩歌
-- 📚 **小說生成**: 基於項目特點創作引人入勝的小說片段
-- 🌐 **現代界面**: 響應式 Vue 3 前端界面，水平三欄佈局設計
-- ⚡ **高性能**: FastAPI 後端提供快速 API 響應
-- 🧙‍♂️ **AI 聊天助手**: 擬人化的魔法助手，提供程式設計建議和創意靈感
-- 📱 **優化體驗**: 響應式佈局設計，三欄內容獨立滾動，充分利用螢幕空間
+- 🔍 **Intelligent Analysis**: Deep analysis of GitHub project code structure and content
+- 📊 **Insight Reports**: Generate technical insights and analysis reports for projects
+- 🎨 **Poetry Creation**: Transform code logic into beautiful poetry
+- 📚 **Novel Generation**: Create engaging novel excerpts based on project characteristics
+- 🌐 **Modern Interface**: Responsive Vue 3 frontend with horizontal three-column layout design
+- ⚡ **High Performance**: FastAPI backend provides fast API responses
+- 🧙‍♂️ **AI Chat Assistant**: Personified magical assistant providing programming advice and creative inspiration
+- 📱 **Optimized Experience**: Responsive layout design with independent scrolling for three columns, maximizing screen space utilization
 
-## 快速開始
+## Quick Start
 
-### 環境要求
+### Requirements
 
 - **Python**: 3.8+
-- **Node.js**: 20.19.0+ 或 22.12.0+
-- **npm**: 最新版本
+- **Node.js**: 20.19.0+ or 22.12.0+
+- **npm**: Latest version
 
-### 1. 克隆項目
+### 1. Clone the Project
 
 ```bash
 git clone <your-repo-url>
 cd <project-directory>
 ```
 
-### 2. 啟動後端服務
+### 2. Start Backend Service
 
 ```bash
-# 進入後端目錄
+# Enter backend directory
 cd repo-saga-backend
 
-# 安裝 Python 依賴
+# Install Python dependencies
 pip install -r requirements.txt
 
-# 啟動 FastAPI 服務器
+# Start FastAPI server
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-後端服務將在 `http://localhost:8000` 啟動
+The backend service will start at `http://localhost:8000`
 
-### 3. 啟動前端服務
+### 3. Start Frontend Service
 
-打開新的終端窗口：
+Open a new terminal window:
 
 ```bash
-# 進入前端目錄
+# Enter frontend directory
 cd repo-saga-frontend
 
-# 安裝 Node.js 依賴
+# Install Node.js dependencies
 npm install
 
-# 啟動開發服務器
+# Start development server
 npm run dev
 ```
 
-前端應用將在 `http://localhost:5173` 啟動
+The frontend application will start at `http://localhost:5173`
 
-### 4. 訪問應用
+### 4. Access the Application
 
-在瀏覽器中打開 `http://localhost:5173`，即可開始使用 Repo Saga Engine！
+Open `http://localhost:5173` in your browser to start using Repo Saga Engine!
 
-## API 文檔
+## API Documentation
 
-### 主要端點
+### Main Endpoints
 
-- `GET /`: API 歡迎信息
-- `GET /example`: 獲取 FastAPI 示例數據
-- `POST /generate`: 生成文學作品
+- `GET /`: API welcome message
+- `GET /example`: Get FastAPI example data
+- `POST /generate`: Generate literary works
 
-### 使用示例
+### Usage Example
 
 ```bash
-# 生成文學作品
+# Generate literary works
 curl -X POST "http://localhost:8000/generate" \
      -H "Content-Type: application/json" \
      -d '{"url": "https://github.com/tiangolo/fastapi"}'
 ```
 
-### API 文檔
+### API Documentation
 
-啟動後端服務後，可以訪問：
+After starting the backend service, you can access:
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
 
-## 開發指南
+## Development Guide
 
-### 後端開發
+### Backend Development
 
 ```bash
 cd repo-saga-backend
 
-# 安裝依賴
+# Install dependencies
 pip install -r requirements.txt
 
-# 運行測試
+# Run tests
 python test_generate_api.py
 
-# 啟動開發服務器
+# Start development server
 uvicorn app.main:app --reload
 ```
 
-### 前端開發
+### Frontend Development
 
 ```bash
 cd repo-saga-frontend
 
-# 安裝依賴
+# Install dependencies
 npm install
 
-# 開發模式
+# Development mode
 npm run dev
 
-# 構建生產版本
+# Build production version
 npm run build
 
-# 預覽生產版本
+# Preview production version
 npm run preview
 ```
 
-## 技術棧
+## Technology Stack
 
-### 後端
-- **FastAPI**: 現代、快速的 Python Web 框架
-- **Uvicorn**: ASGI 服務器
-- **Requests**: HTTP 請求庫
-- **Python-dotenv**: 環境變量管理
+### Backend
+- **FastAPI**: Modern, fast Python web framework
+- **Uvicorn**: ASGI server
+- **Requests**: HTTP request library
+- **Python-dotenv**: Environment variable management
 
-### 前端
-- **Vue 3**: 漸進式 JavaScript 框架
-- **Vite**: 下一代前端構建工具
-- **Axios**: HTTP 客戶端
-- **CSS3**: 現代樣式設計
+### Frontend
+- **Vue 3**: Progressive JavaScript framework
+- **Vite**: Next-generation frontend build tool
+- **Axios**: HTTP client
+- **CSS3**: Modern style design
 
-## 部署
+## Deployment
 
-### 生產環境部署
+### Production Environment Deployment
 
-1. **後端部署**:
+1. **Backend Deployment**:
 ```bash
 cd repo-saga-backend
 pip install -r requirements.txt
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-2. **前端部署**:
+2. **Frontend Deployment**:
 ```bash
 cd repo-saga-frontend
 npm install
 npm run build
-# 將 dist/ 目錄部署到靜態文件服務器
+# Deploy the dist/ directory to a static file server
 ```
 
-## 貢獻指南
+## Contributing
 
-1. Fork 本項目
-2. 創建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 開啟 Pull Request
+1. Fork this project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 許可證
+## License
 
-本項目採用 MIT 許可證 - 查看 [LICENSE](LICENSE) 文件了解詳情。
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 聯繫方式
+## Contact
 
-如有問題或建議，請通過以下方式聯繫：
-- 提交 Issue
-- 發送 Pull Request
-- 聯繫項目維護者
+If you have questions or suggestions, please contact us through:
+- Submit an Issue
+- Send a Pull Request
+- Contact project maintainers
 
 ---
 
-**讓代碼變成詩歌，讓項目化為故事！** ✨
+**Turn code into poetry, transform projects into stories!** ✨
